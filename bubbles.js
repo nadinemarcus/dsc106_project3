@@ -1,6 +1,6 @@
 (function() {
     var width = 1000;
-     height = 1000;
+     height = 800;
 
     var svg = d3.select("#chart")
         .append("svg")
@@ -13,7 +13,7 @@
 
     var simulation = d3.forceSimulation()
         .force("x", d3.forceX(width / 2).strength(0.05))
-        .force("y", d3.forceY(height / 2).strength(0.05))
+        .force("y", d3.forceY(height / 2).strength(0.05 ))
         .force("collide", d3.forceCollide(function(d) {
             return radiusScale(d.sales) + 1;
         }))
@@ -32,6 +32,9 @@
                 return radiusScale(d.sales)
             })
             .attr("fill", "steelblue")
+            //.on('click', function(d) {
+            //    console.log(d)
+            //})
 
         simulation.nodes(datapoints)
             .on('tick', ticked)
