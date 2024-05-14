@@ -1,40 +1,63 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <style>
-            * {
-                font-family: "Helvetica Neue"
-            }
-            p, text {
-                font-size: 0.85em;
-            }
-            svg {
-                background: #f1f1f1
-            }
-        </style>
-    </head>
-    <body>
-        <button id="action">Action</button>
-        <button id="adventure">Adventure</button>
-        <button id="animation">Animation</button>
-        <button id="biography">Biography</button>
-        <button id="comedy">Comedy</button>
-        <button id="crime">Crime</button>
-        <button id="drama">Drama</button>
-        <button id="family">Family</button>
-        <button id="fantasy">Fantasy</button>
-        <button id="history">History</button>
-        <button id="horror">Horror</button>
-        <button id="music">Music</button>
-        <button id="musical">Musical</button>
-        <button id="mystery">Mystery</button>
-        <button id="romance">Romance</button>
-        <button id="scifi">Sci-Fi</button>
-        <button id="thriller">Thriller</button>
-        <button id="combined">Combined</button>
-        <div id="chart"></div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
-        <script src="bubbles.js"></script>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        * {
+            font-family: "Helvetica Neue"
+        }
+
+        p,
+        text {
+            font-size: 0.85em;
+        }
+
+        svg {
+            background: #f1f1f1
+        }
+
+
+        /* Tooltip style */
+        .tooltip {
+            position: absolute;
+            text-align: center;
+            width: auto;
+            height: auto;
+            padding: 5px;
+            font: 12px sans-serif;
+            background: #fff;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            pointer-events: none;
+        }
+    </style>
+
+    </style>
+</head>
+
+<body>
+    <button id="action">Action</button>
+    <button id="adventure">Adventure</button>
+    <button id="animation">Animation</button>
+    <button id="biography">Biography</button>
+    <button id="comedy">Comedy</button>
+    <button id="crime">Crime</button>
+    <button id="drama">Drama</button>
+    <button id="family">Family</button>
+    <button id="fantasy">Fantasy</button>
+    <button id="history">History</button>
+    <button id="horror">Horror</button>
+    <button id="music">Music</button>
+    <button id="musical">Musical</button>
+    <button id="mystery">Mystery</button>
+    <button id="romance">Romance</button>
+    <button id="scifi">Sci-Fi</button>
+    <button id="thriller">Thriller</button>
+    <button id="combined">Combined</button>
+    <div id="chart"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+    <script src="bubbles.js"></script>
+</body>
+
 </html>
