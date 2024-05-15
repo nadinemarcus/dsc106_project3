@@ -35,11 +35,11 @@
     var tooltip = d3.select("body").append("div")
         .attr("class", "tooltip")
         .style("opacity", 0);
-    
+
 
     function ready(error, datapoints) {
         var colorScale = d3.scaleOrdinal(d3.schemeCategory20)
-        .domain(datapoints.map(d => d.Distributor));
+            .domain(datapoints.map(d => d.Distributor));
 
         var circles = svg.selectAll(".movie")
             .data(datapoints)
@@ -78,7 +78,7 @@
             .data(colorScale.domain())
             .enter().append("g")
             .attr("class", "legend")
-            .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+            .attr("transform", function (d, i) { return "translate(0," + i * 20 + ")"; });
 
         legend.append("rect")
             .attr("x", width - 18)
@@ -91,10 +91,10 @@
             .attr("y", 9)
             .attr("dy", ".35em")
             .style("text-anchor", "end")
-            .text(function(d) { return d; });
+            .text(function (d) { return d; });
 
         // Add background for legend text
-        legend.each(function(d, i) {
+        legend.each(function (d, i) {
             var bbox = this.getBBox();
             d3.select(this).insert("rect", "text")
                 .attr("x", bbox.x - 2)
@@ -109,6 +109,9 @@
         // Event listeners for buttons
         function addButtonListener(buttonId, forceX) {
             d3.select(buttonId).on('click', function () {
+                d3.selectAll('.button').classed('selected-button', false);
+                // Add the class to the clicked button
+                d3.select(this).classed('selected-button', true);
                 simulation
                     .force("x", forceX)
                     .alpha(0.5) // Reset alpha to restart the simulation
